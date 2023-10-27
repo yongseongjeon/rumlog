@@ -7,7 +7,7 @@ const Home: NextPage = ({ markdownString }) => {
 };
 
 export async function getStaticProps() {
-  const markdownString = getPost({ postName: "2023-10-27-hello.md" });
+  const markdownString = getPost({ fileName: "2023-10-27-hello.md" });
 
   return {
     props: {
