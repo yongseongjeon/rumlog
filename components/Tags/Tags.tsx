@@ -4,7 +4,7 @@ interface Props {
 
 function Tags({ tags }: Props) {
   return (
-    <div className="flex space-x-2 justify-end">
+    <div className="flex space-x-2">
       {tags.map((tag: string) => (
         <span key={tag} className="text-gray-500">
           #{tag}

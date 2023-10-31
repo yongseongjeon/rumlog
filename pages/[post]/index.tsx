@@ -3,7 +3,7 @@ import { getAllPost, getPost } from "../../utils/getPost";
 import Date from "../../components/Date/Date";
 import Tags from "../../components/Tags/Tags";
 
-interface Metadata {
+export interface Metadata {
   title: string;
   author: string;
   date: string;
