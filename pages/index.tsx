@@ -8,17 +8,17 @@ import Date from "../components/Date/Date";
 const Home: NextPage = ({ postMetadata }) => {
   return (
     <>
-      <ul>
+      <div>
         {postMetadata.map(({ title, date, tags, author }: Metadata) => (
           <Link key={title} href={`/${title}`}>
-            <div className="w-full h-36 border border-black flex-col hover:bg-gray-100">
-              <h1>{title}</h1>
+            <div className="w-full h-36 border border-black flex-col hover:bg-gray-100 p-4">
+              <h1 className="mt-0">{title}</h1>
               <Date date={date} />
               <Tags tags={tags} />
             </div>
           </Link>
         ))}
-      </ul>
+      </div>
     </>
   );
 };
