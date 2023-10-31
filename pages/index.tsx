@@ -1,40 +1,30 @@
 import type { NextPage } from "next";
-import ReactMarkdown from "react-markdown";
-import { getPost } from "../utils/getPost";
-import Date from "../components/Date/Date";
+import { getAllPost } from "../utils/getPost";
+import Link from "next/link";
 
-const Home: NextPage = ({ metadata, content }) => {
+const Home: NextPage = ({ res }) => {
   return (
     <>
-      <div className="flex-col space-y-6">
-        <h1>{metadata.title}</h1>
-        <div className="flex space-x-2">
-          <div className="font-bold">{metadata.author}</div>
-          <Date date={metadata.date} />
-        </div>
-        <div className="flex space-x-2">
-          {metadata.tags.map((tag: string) => (
-            <span key={tag} className="text-gray-500">
-              #{tag}
-            </span>
-          ))}
-        </div>
-      </div>
-      <ReactMarkdown>{content}</ReactMarkdown>
+      <ul>
+        {res.map((title: string) => (
+          <div key={title} className="w-full h-12 border border-black">
+            <Link href={`/${title}`}>{title}</Link>
+          </div>
+        ))}
+      </ul>
     </>
   );
 };
 
+export default Home;
+
 export async function getStaticProps() {
-  const { metadata, content } = getPost({ fileName: "2023-10-26-test.md" });
+  const res = getAllPost();
 
   return {
     props: {
-      metadata,
-      content,
+      res,
     },
   };
 }
-
-export default Home;
 
