@@ -16,5 +16,8 @@ export function getPost({ fileName }: Props) {
 }
 
 export function getAllPost() {
-  return fs.readdirSync(postsDirectory).map((fileName) => fileName.split(".").at(0));
+  return fs.readdirSync(postsDirectory).map((fileName) => {
+    const extIdx = fileName.lastIndexOf(".");
+    return fileName.slice(0, extIdx);
+  });
 }

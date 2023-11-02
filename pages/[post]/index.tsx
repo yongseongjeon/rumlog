@@ -49,14 +49,8 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-  const postFileNames = getAllPost();
-  const postTitles = postFileNames.map((fileName) => {
-    // e.g. fileName = "test.md"
-    //      title = "test"
-    const title = fileName.split(".")[0];
-    return title;
-  });
-  const paths = postTitles.map((title) => {
+  const posts = getAllPost();
+  const paths = posts.map((title) => {
     return {
       params: {
         post: title,

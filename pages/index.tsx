@@ -4,13 +4,14 @@ import Link from "next/link";
 import { Metadata } from "./[post]";
 import Tags from "../components/Tags/Tags";
 import Date from "../components/Date/Date";
+import { spaceToDash } from "../utils/util";
 
 const Home: NextPage = ({ postMetadata }) => {
   return (
     <>
       <div>
         {postMetadata.map(({ title, date, tags, author }: Metadata) => (
-          <Link key={title} href={`/${title}`}>
+          <Link key={title} href={`/${spaceToDash(title)}`}>
             <div className="w-full h-36 border border-black flex-col hover:bg-gray-100 p-4">
               <h1 className="mt-0">{title}</h1>
               <Date date={date} />
