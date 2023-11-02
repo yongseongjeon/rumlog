@@ -1,7 +1,7 @@
-import ReactMarkdown from "react-markdown";
 import { getAllPost, getPost } from "../../utils/getPost";
 import Date from "../../components/Date/Date";
 import Tags from "../../components/Tags/Tags";
+import MarkdownRenderer from "../../components/MarkdownRenderer/MarkdownRenderer";
 
 export interface Metadata {
   title: string;
@@ -30,7 +30,7 @@ function Post({ metadata, content }: Props) {
           </div>
         </div>
       </div>
-      <ReactMarkdown>{content}</ReactMarkdown>
+      <MarkdownRenderer markdown={content} />
     </>
   );
 }
