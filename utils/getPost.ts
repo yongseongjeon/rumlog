@@ -1,6 +1,7 @@
 import path from "path";
 import fs from "fs";
 import matter from "gray-matter";
+import { extractFileName } from "./util";
 
 interface Props {
   fileName: string;
@@ -17,7 +18,6 @@ export function getPost({ fileName }: Props) {
 
 export function getAllPost() {
   return fs.readdirSync(postsDirectory).map((fileName) => {
-    const extIdx = fileName.lastIndexOf(".");
-    return fileName.slice(0, extIdx);
+    return extractFileName(fileName);
   });
 }
