@@ -1,7 +1,7 @@
 import Link from "next/link";
 
-const RESUME_LINK = "https://rumka.notion.site/Yongseong-Jeon-43e8dae33e0049dfada8163051226901?pvs=4";
-const GITHUB_LINK = "https://github.com/yongseongjeon";
+export const RESUME_LINK = "https://rumka.notion.site/Yongseong-Jeon-43e8dae33e0049dfada8163051226901?pvs=4";
+export const GITHUB_LINK = "https://github.com/yongseongjeon";
 
 function Header() {
   return (
