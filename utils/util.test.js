@@ -23,17 +23,17 @@ describe("spaceToDash", () => {
 });
 
 describe("extractFileName", () => {
-  it("콤마 앞의 문자열을 추출한다.", () => {
+  it(". 앞의 문자열을 추출한다.", () => {
     const input = "HelloWorld.md";
     const output = extractFileName(input);
     expect(output).toBe("HelloWorld");
   });
-  it("콤마가 2개 이상이어도 마지막 콤마 앞의 문자열을 추출한다.", () => {
+  it(".이 2개 이상이어도 마지막 . 앞의 문자열을 추출한다.", () => {
     const input = "Hello.World.md";
     const output = extractFileName(input);
     expect(output).toBe("Hello.World");
   });
-  it("콤마가 없으면 에러가 발생한다.", () => {
+  it(".이 없으면 에러가 발생한다.", () => {
     const input = "HelloWorld";
     expect(() => extractFileName(input)).toThrow(ERROR_MESSAGE.UTIL.MUST_CONTAIN_COMMA);
   });
