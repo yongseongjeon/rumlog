@@ -7,6 +7,7 @@
   "plugins": ["@typescript-eslint"],
   "rules": {
     "@typescript-eslint/quotes": ["error", "double", { "avoidEscape": true }]
-  }
+  },
+  "ignorePatterns": ["components/**/*.test.jsx"]
 }
 

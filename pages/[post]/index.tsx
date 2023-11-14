@@ -37,7 +37,13 @@ function Post({ metadata, content }: Props) {
 
 export default Post;
 
-export async function getStaticProps({ params }) {
+interface StaticProps {
+  params: {
+    post: string;
+  };
+}
+
+export async function getStaticProps({ params }: StaticProps) {
   const { metadata, content } = getPost({ fileName: params.post + ".md" });
 
   return {
