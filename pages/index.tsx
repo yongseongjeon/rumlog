@@ -11,7 +11,7 @@ const Home: NextPage = ({ postMetadata }) => {
     <>
       <div>
         {postMetadata.map(({ title, date, tags, author }: Metadata) => (
-          <Link key={title} href={`/${spaceToDash(title)}`}>
+          <Link key={`${author}-${title}`} href={`/${spaceToDash(title)}`}>
             <div className="w-full h-36 border border-black flex-col hover:bg-gray-100 p-4">
               <h1 className="mt-0">{title}</h1>
               <Date date={date} />

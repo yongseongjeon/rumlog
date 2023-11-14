@@ -7,7 +7,7 @@ function Date({ date }: Props) {
   const [year, month, days] = ymd.split("-");
   return (
     <div className="mb-4">
-      {year}년 {month}월 {days}일
+      {year}년 {month}월 {days}일 {time}
     </div>
   );
 }
