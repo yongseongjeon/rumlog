@@ -6,7 +6,11 @@ import Tags from "../components/Tags/Tags";
 import Date from "../components/Date/Date";
 import { spaceToDash } from "../utils/util";
 
-const Home: NextPage = ({ postMetadata }) => {
+interface Props {
+  postMetadata: Metadata[];
+}
+
+const Home: NextPage<Props> = ({ postMetadata }: Props) => {
   return (
     <>
       <div>
