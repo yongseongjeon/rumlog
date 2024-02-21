@@ -9,3 +9,22 @@ a {
   text-decoration: none;
   color: black;
 }
+
+thead {
+  background-color: #3498db;
+  color: #fff;
+  text-align: center;
+}
+
+th {
+  padding: 10px;
+}
+
+td {
+  padding: 10px;
+  background-color: #ecf0f1;
+}
+
+li {
+  margin: 10px;
+}

@@ -1,6 +1,7 @@
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { materialDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import ReactMarkdown, { Components } from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 interface Props {
   markdown: string;
@@ -23,7 +24,11 @@ const MarkdownRenderer = ({ markdown }: Props) => {
     },
   };
 
-  return <ReactMarkdown components={components}>{markdown}</ReactMarkdown>;
+  return (
+    <ReactMarkdown components={components} remarkPlugins={[remarkGfm]}>
+      {markdown}
+    </ReactMarkdown>
+  );
 };
 
 export default MarkdownRenderer;
